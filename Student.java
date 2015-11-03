@@ -66,6 +66,42 @@ public class Student {
 	      }
 	   }
 
+
+
+
+
+
+
+  public static void AllViewStudent() throws IOException{
+      BufferedReader readFile = new BufferedReader(new FileReader("student.txt"));
+      i = readFile.read();
+      BufferedReader reader = new BufferedReader(new FileReader("student.txt"));
+      String line = "";
+      System.out.println("기존파일에 저장된 내용");
+      System.out.println("학번  \t 이름 \t 학과 \t 전화번호");
+      while((line = reader.readLine()) != null) {
+         String[] temp = line.split("\\|");
+         System.out.printf("%s\t%s\t%s\t%s\n",temp[0],temp[1],temp[2], temp[3]);
+      }
+      reader.close();
+   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
    public static void ViewStudent() throws FileNotFoundException, IOException, ClassNotFoundException{
       BufferedReader readFile = new BufferedReader(new FileReader("student.txt"));
       scan.nextLine();
