@@ -10,7 +10,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
 
-
+***
 public class Student {      
 
    static Scanner scan = new Scanner(System.in);
