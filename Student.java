@@ -132,7 +132,30 @@ public static void DeleteStudent() throws FileNotFoundException, IOException{
          case 1:
             Addstudent();
             break;
+
+
+
+	case 2:
+            UpdateStudent();
+            break;
+         case 3:
+            DeleteStudent();
+            break;
+         case 4:
+            ViewStudent();
+            break;
+         case 5:
+            AllViewStudent();
+            break;
+         case 6:
+            System.out.println("Á¾·á");
+            System.exit(0);
+            break;
          
+
+
+
+
          }
       }while(menu != 6);
    }
