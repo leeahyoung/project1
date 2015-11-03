@@ -86,6 +86,33 @@ public class Student {
       reader.close();
    }
 
+
+public static void DeleteStudent() throws FileNotFoundException, IOException{
+      String dummy = "";
+      BufferedWriter writer = new BufferedWriter(new FileWriter("student.txt",true));
+      scan.nextLine();
+      System.out.print("삭제하고자 하는 학생의 학번을 입력하세요 : ");
+      int sn = scan.nextInt();
+      BufferedReader reader = new BufferedReader(new FileReader("student.txt"));
+      String newline = "";
+      while((newline = reader.readLine()) != null) {
+         String[] newtemp = newline.split("\\|");
+         int intId = Integer.parseInt(newtemp[0]);
+         if(intId==sn){
+            String delData = newline;
+            System.out.println("삭제되는 데이터 = "+delData);
+         }
+         else{
+            dummy += (newline + "\r\n" ); 
+         }
+      }
+      
+      FileWriter fw = new FileWriter("student.txt");
+      fw.write(dummy);         
+      fw.close();
+      reader.close();
+   }
+
    public static void main(String[] args) throws FileNotFoundException, IOException, ClassNotFoundException{
       int menu=0;   
       do{
