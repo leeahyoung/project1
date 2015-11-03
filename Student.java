@@ -63,6 +63,26 @@ public class Student {
 	      }
 	   }
 
+   public static void ViewStudent() throws FileNotFoundException, IOException, ClassNotFoundException{
+      BufferedReader readFile = new BufferedReader(new FileReader("student.txt"));
+      scan.nextLine();
+      System.out.print("검색하고자 하는 학생의 학번을 입력하세요 : ");
+      int sn = scan.nextInt();
+      BufferedReader reader = new BufferedReader(new FileReader("student.txt"));
+      String line="";
+      System.out.println("학번  \t 이름 \t 학과 \t 전화번호");
+
+      while((line = reader.readLine()) != null) {
+         String[] temp = line.split("\\|");
+         int intId = Integer.parseInt(temp[0]);
+         if(sn == intId)    
+         {
+            System.out.printf("%s\t%s\t%s\t%s\n", temp[0],temp[1],temp[2], temp[3]);
+         }
+      }
+      reader.close();
+   }
+
    public static void main(String[] args) throws FileNotFoundException, IOException, ClassNotFoundException{
       int menu=0;   
       do{
